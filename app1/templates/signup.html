@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register here</title>
+</head>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Calibri;
+            background-color:black;
+        }
+
+        .container {
+            padding: 50px;
+            background-color: gray;
+        }
+      
+        input[type=text],
+        input[type=password],
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            /* background-color: orange; */
+            outline: none;
+        }
+
+        div {
+            padding: 10px 0;
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        .registerbtn {
+            background-color: rgb(16, 213, 248);
+            color:black;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            /* width: 100%; */
+            opacity: 0.9;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <center>
+                <h1> Student Registeration Form</h1>
+            </center>
+            <hr>
+            <label><b> Firstname </b></label>
+            <input type="text" name="FirstName" placeholder="Firstname"  />
+            <label><b> Middlename: </b> </label>
+            <input type="text" name="MiddleName" placeholder="Middlename"  />
+            <label><b> Lastname: </b></label>
+            <input type="text" name="LastName" placeholder="Lastname"  />
+            <label>
+               <b>Phone:</b> 
+            </label>
+            <input type="numeric" name="Phone" placeholder="phone no." maxlength="10">
+            <br> <br>
+           <b>Address :</b> 
+            <textarea cols="80" rows="5" name="Address" placeholder="Current Address" value="address" >
+            </textarea>
+            <label for="email"><b>Email: </b></label>
+            <input type="email" placeholder="Enter Email" name="Email" > <br> <br>
+
+            <label for="psw"><b>Password: </b></label>
+            <input type="password" placeholder="Enter Password" name="Password">
+
+            <button type="submit" class="registerbtn">Register</button>
+    </form>
+</body>
+
+</html>
